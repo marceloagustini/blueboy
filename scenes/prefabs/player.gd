@@ -12,7 +12,7 @@ var is_dead = false
 
 func _physics_process(delta):
 	if is_dead == false:
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("ui_right") or $Joystick/btnLeft2.is_pressed():
 			if is_attacking == false || is_on_floor() == false:
 				velocity.x = SPEED
 				if is_attacking == false:
@@ -20,7 +20,7 @@ func _physics_process(delta):
 					$AnimatedSprite.flip_h = false
 					if sign($Position2D.position.x) == -1:
 						$Position2D.position.x *= -1
-		elif Input.is_action_pressed("ui_left"):
+		elif Input.is_action_pressed("ui_left") or $Joystick/btnLeft.is_pressed():
 			if is_attacking == false || is_on_floor() == false:
 				velocity.x = -SPEED
 				if is_attacking == false:
@@ -33,13 +33,13 @@ func _physics_process(delta):
 			if on_ground == true && is_attacking == false:
 				$AnimatedSprite.play("idle")
 			
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("ui_up") or $Joystick/btnJump.is_pressed():
 			if is_attacking == false:
 				if on_ground == true:
 					velocity.y = JUMP_POWER
 					on_ground = false
 		
-		if Input.is_action_just_pressed("ui_focus_next") && is_attacking == false:
+		if (Input.is_action_just_pressed("ui_focus_next") or $Joystick/btnShot.is_pressed()) && is_attacking == false:
 			if is_on_floor():
 				velocity.x=0
 			is_attacking = true

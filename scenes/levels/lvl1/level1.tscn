@@ -15,6 +15,7 @@
 [node name="HUD" parent="." instance=ExtResource( 1 )]
 
 [node name="map" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="hell" type="TileMap" parent="map"]
 tile_set = ExtResource( 2 )
@@ -38,6 +39,7 @@ position = Vector2( 1429.41, 161.427 )
 position = Vector2( 89.0287, 49.0708 )
 
 [node name="enemies" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Enemy" parent="enemies" instance=ExtResource( 6 )]
 position = Vector2( 559.328, 163.05 )
