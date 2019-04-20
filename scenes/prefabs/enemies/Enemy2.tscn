@@ -1,0 +1,50 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scenes/prefabs/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://sprites/enemies/32 x 32 flying bat_fly_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/enemies/32 x 32 flying bat_fly_1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/enemies/32 x 32 flying bat_fly_2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/enemies/32 x 32 flying bat_fly_3.png" type="Texture" id=5]
+[ext_resource path="res://sprites/enemies/32 x 32 flying bat_fly_4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/enemies/32 x 32 flying bat_sleep_0.png" type="Texture" id=7]
+[ext_resource path="res://sprites/enemies/32 x 32 flying bat_sleep_1.png" type="Texture" id=8]
+[ext_resource path="res://sprites/enemies/32 x 32 flying bat_sleep_2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/enemies/32 x 32 flying bat_sleep_3.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9.33273, 11.8953 )
+
+[node name="Enemy" type="KinematicBody2D"]
+position = Vector2( 0.675831, -0.235089 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.242436, 3.61351 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 13.842, 5.76916 )
+enabled = true
+cast_to = Vector2( 0, 16 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

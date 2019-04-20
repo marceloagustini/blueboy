@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/prefabs/gate.gd" type="Script" id=1]
+[ext_resource path="res://sprites/gates/tile000.png" type="Texture" id=2]
+[ext_resource path="res://sprites/gates/tile003.png" type="Texture" id=3]
+[ext_resource path="res://sprites/gates/tile006.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "close",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "open",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29.0911, 27.8343 )
+
+[node name="gate" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.761856, 3.80934 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_gate_body_entered"]

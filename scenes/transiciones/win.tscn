@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/transiciones/win.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 1
+outline_color = Color( 0.454902, 0.407843, 0.407843, 1 )
+font_data = ExtResource( 2 )
+
+[node name="game_over" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 16.1552, 9.05908 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 0.06
+margin_left = 140.0
+margin_top = 120.0
+margin_right = 40.0
+margin_bottom = 40.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+modulate = Color( 1, 0.0156863, 0.0156863, 1 )
+margin_right = 195.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 1 )
+text = "WIN !!!"
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
