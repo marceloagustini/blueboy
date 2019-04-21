@@ -7,3 +7,6 @@ func _on_Timer_timeout():
 	if global.scene == 1:
 		get_tree().change_scene("scenes/levels/lvl2/level2.tscn")
 		global.scene = 2
+	if global.scene == 2:
+		get_tree().change_scene("scenes/levels/lvl2/level3.tscn")
+		global.scene = 3

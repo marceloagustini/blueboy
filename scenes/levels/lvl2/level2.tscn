@@ -80,6 +80,7 @@ rebota = true
 position = Vector2( 1592.14, 30.609 )
 
 [node name="items" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="BrickCrash" parent="items" instance=ExtResource( 8 )]
 position = Vector2( 1487.36, 202.278 )
@@ -89,7 +90,7 @@ position = Vector2( 111.538, 15.7692 )
 
 [node name="Felipe" parent="." instance=ExtResource( 10 )]
 position = Vector2( 904.746, -233.838 )
-startPos = Vector2( 956.263, -21.121 )
+startPos = Vector2( 956, -21 )
 
 [node name="platforms" type="Node2D" parent="."]
 editor/display_folded = true
