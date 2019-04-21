@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/prefabs/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/lvl1/tilemap.tres" type="TileSet" id=2]
@@ -8,7 +8,9 @@
 [ext_resource path="res://scenes/prefabs/enemies/Enemy2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/prefabs/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/prefabs/items/BrickCrash.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/prefabs/Lost.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/prefabs/items/life.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/prefabs/Lost.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/prefabs/coins.tscn" type="PackedScene" id=11]
 
 [node name="level1" type="Node2D"]
 
@@ -36,28 +38,27 @@ script = ExtResource( 3 )
 position = Vector2( 1429.41, 161.427 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 89.0287, 49.0708 )
+position = Vector2( 104.009, 165.03 )
 
 [node name="enemies" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Enemy" parent="enemies" instance=ExtResource( 6 )]
 position = Vector2( 559.328, 163.05 )
 
 [node name="Enemy6" parent="enemies" instance=ExtResource( 6 )]
-position = Vector2( 569.878, 36.8057 )
+position = Vector2( 585.213, 44.9527 )
 
 [node name="Enemy7" parent="enemies" instance=ExtResource( 6 )]
-position = Vector2( 953.737, 150.578 )
+position = Vector2( 953.737, 164.476 )
 
 [node name="Enemy8" parent="enemies" instance=ExtResource( 6 )]
 position = Vector2( 1043.64, 158.814 )
 
 [node name="Enemy9" parent="enemies" instance=ExtResource( 6 )]
-position = Vector2( 763.871, -22.6462 )
+position = Vector2( 760.995, -16.8954 )
 
 [node name="Enemy10" parent="enemies" instance=ExtResource( 6 )]
-position = Vector2( 1311.35, 57.2397 )
+position = Vector2( 1471.89, 162.192 )
 HP = 5
 size = Vector2( 2, 2 )
 
@@ -74,7 +75,7 @@ position = Vector2( 750.166, 159.582 )
 rebota = true
 
 [node name="Enemy5" parent="enemies" instance=ExtResource( 7 )]
-position = Vector2( 614.147, 27.2853 )
+position = Vector2( 878.204, -59.9351 )
 
 [node name="items" type="Node2D" parent="."]
 editor/display_folded = true
@@ -82,10 +83,115 @@ editor/display_folded = true
 [node name="BrickCrash" parent="items" instance=ExtResource( 8 )]
 position = Vector2( 494.742, 13.8249 )
 
-[node name="Felipe" parent="." instance=ExtResource( 9 )]
+[node name="Life" parent="items" instance=ExtResource( 9 )]
+position = Vector2( 655.807, 167.003 )
+
+[node name="Felipe" parent="." instance=ExtResource( 10 )]
 position = Vector2( 956.263, -21.1213 )
 startPos = Vector2( 956.263, -21.121 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 186.385, 170.025 )
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="coins" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 87.663, 140 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins5" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 559.267, 22.9313 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins8" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 718.351, -49.1064 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins11" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 671.897, 132.232 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins15" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 942.653, 129.458 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins25" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1267.09, 16.3593 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins18" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1034.3, 128.903 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins22" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1358.74, 15.8044 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins19" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 925.454, -80.2668 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins2" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 117.295, 140 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins4" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 588.899, 22.9313 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins7" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 747.983, -49.1064 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins10" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 701.529, 132.232 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins13" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 972.285, 129.458 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins23" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1296.73, 16.3593 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins16" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1063.93, 128.903 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins20" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 955.085, -80.2668 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins3" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 147.029, 140 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins6" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 618.633, 22.9313 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins9" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 777.238, -49.1064 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins12" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 731.263, 132.232 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins14" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1002.02, 129.458 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins24" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1326.46, 16.3593 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins17" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 1093.67, 128.903 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="coins21" parent="coins" instance=ExtResource( 11 )]
+position = Vector2( 984.82, -80.2668 )
+scale = Vector2( 0.3, 0.3 )
 

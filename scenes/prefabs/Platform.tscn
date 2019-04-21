@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/prefabs/Platform.gd" type="Script" id=1]
-[ext_resource path="res://assets/tiles/level1.png" type="Texture" id=2]
+[ext_resource path="res://assets/tiles/tileset.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 97.1926, 13.3706 )
+extents = Vector2( 45.7661, 13.3706 )
 
 [node name="MovingPlatform" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,7 +19,7 @@ position = Vector2( 0.130844, 0.544399 )
 position = Vector2( 0, -0.331333 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 256, 32 )
+region_rect = Rect2( 256, 32, 96, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
 position = Vector2( -0.533054, -0.110048 )

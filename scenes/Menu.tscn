@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=1]
-[ext_resource path="res://assets/backgrounds/game_background_1.png" type="Texture" id=2]
-[ext_resource path="res://assets/ui/button_play.png" type="Texture" id=3]
-[ext_resource path="res://assets/ui/button_play_hover.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/button_play.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/button_play_hover.png" type="Texture" id=3]
 
 [node name="title" type="Node"]
 script = ExtResource( 1 )
@@ -11,7 +10,6 @@ script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1, 0 )
 scale = Vector2( 0.337076, 0.348643 )
-texture = ExtResource( 2 )
 centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -38,15 +36,15 @@ margin_bottom = 184.0
 [node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 margin_right = 190.0
 margin_bottom = 90.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 4 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 94.0
 margin_right = 190.0
 margin_bottom = 184.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 4 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
 stretch_mode = 3
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
